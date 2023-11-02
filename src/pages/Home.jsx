@@ -101,7 +101,7 @@ const Home = () => {
           ? Array(4)
               .fill(0)
               .map((item, index) => <ProductSkeleton key={index} />)
-          : secondProducts.map((product) => (
+          : secondProducts?.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -118,7 +118,7 @@ const Home = () => {
           ? Array(4)
               .fill(0)
               .map((item, index) => <ProductSkeleton key={index} />)
-          : products.map((product) => (
+          : products?.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
