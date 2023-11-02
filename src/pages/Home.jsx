@@ -113,7 +113,7 @@ const Home = () => {
         <span className='text-gray-500 text-sm'>POPULAR PRODUCTS</span>
         <h1 className='text-black text-4xl'>Trending Products</h1>
       </div>
-      <div className='container grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-10 mx-auto'>
+      <div className='container flex flex-wrap items-start gap-x-3 gap-y-10 justify-center mx-auto'>
         {isLoading
           ? Array(4)
               .fill(0)

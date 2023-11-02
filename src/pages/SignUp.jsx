@@ -90,7 +90,7 @@ const SignUp = () => {
     <div className='flex sm:pt-2 justify-center absolute w-full h-screen overflow-hidden bg-[#f6f6f6] px-2 sm:px-4 space-x-2'>
       <form
         onSubmit={handleSubmit}
-        className='w-full sm:w-[450px] sm:h-[580px] pt-3 px-4 shadow-inner shadow-slate-50 bg-[#efefef] flex flex-col items-center space-y-3 rounded-md'>
+        className='w-full sm:w-[500px] sm:h-[580px] pt-10 px-4 flex flex-col items-center space-y-3 rounded-md'>
         <div>
           <IoCreateOutline
             className='text-slate-100 font-semibold rounded-full bg-green-500 p-5 box-content'
@@ -189,7 +189,7 @@ const SignUp = () => {
           </p>
         </div>
       </form>
-      <div className='w-2/5 hidden md:flex'>
+      <div className='w-2/5 hidden lg:flex'>
         <img src={Illustration} alt='' />
       </div>
     </div>

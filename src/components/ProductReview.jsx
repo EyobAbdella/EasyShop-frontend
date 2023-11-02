@@ -7,7 +7,12 @@ import jwtDecode from "jwt-decode";
 
 const ProductReview = ({ reviews }) => {
   const { authTokens } = useContext(AuthContext);
-  const userId = jwtDecode(authTokens.access).user_id;
+  let userId;
+
+  if (authTokens) {
+    userId = jwtDecode(authTokens.access).user_id;
+  }
+
   const currentUserReview = reviews.find(
     (review) => review.user.user_id === userId
   );

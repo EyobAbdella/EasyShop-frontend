@@ -62,10 +62,10 @@ const Login = () => {
   };
 
   return (
-    <div className='flex items-center justify-center absolute w-full h-full z-[100] bg-[#f6f6f6] px-2 sm:px-4 space-x-2'>
+    <div className='flex pt-10 justify-center absolute w-full h-screen z-[100] bg-[#f6f6f6] px-2 sm:px-4 space-x-2'>
       <form
         onSubmit={handleSubmit}
-        className='h-screen w-full sm:w-[450px] sm:h-[500px] pt-10 px-4 shadow-inner shadow-slate-50 bg-[#efefef] flex flex-col items-center py-2 space-y-5 rounded-md'>
+        className='h-screen w-full sm:w-[500px] sm:h-[530px] pt-10 px-4 flex flex-col items-center py-2 gap-y-6 rounded-md'>
         <div className='text-slate-100 font-semibold w-20 h-20 rounded-full bg-green-400 flex items-center justify-center'>
           <RiLoginCircleFill size={35} />
         </div>
@@ -106,7 +106,7 @@ const Login = () => {
             </span>
           )}
         </div>
-        <div className='px-4 w-full space-y-4'>
+        <div className='px-4 w-full space-y-4 mt-2'>
           <button
             onClick={handleSubmit}
             className='w-full py-3 rounded text-lg text-slate-50 bg-green-500 hover:bg-green-600 relative'>
@@ -125,7 +125,7 @@ const Login = () => {
           </p>
         </div>
       </form>
-      <div className='w-2/5 hidden md:flex'>
+      <div className='w-2/5 hidden lg:flex'>
         <img src={Illustration} alt='' />
       </div>
     </div>
