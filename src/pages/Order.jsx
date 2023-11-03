@@ -59,36 +59,37 @@ const Order = () => {
               <div className='text-lg text-slate-100 font-semibold'>
                 {order.is_paid ? (
                   order.is_delivered ? (
-                    <h1 className='bg-green-900 px-1.5 py-1'>
-                      Your order is delivered
+                    <h1 className='bg-green-900 px-4 py-2 text-xl md:text-2xl rounded-md text-white font-bold'>
+                      Your order has been successfully delivered!{" "}
                     </h1>
                   ) : (
-                    <h1 className='bg-sky-900 px-1.5 py-1'>
-                      Your order is processing
+                    <h1 className='text-xl md:text-2xl font-bold bg-sky-900 text-white px-4 py-2 rounded-md'>
+                      Thank you for choosing us! Your order is currently being
+                      processed.
                     </h1>
                   )
                 ) : (
                   <Link to='/checkout' onClick={() => setOrder(order)}>
-                    <h1 className=' bg-yellow-800 px-1.5 py-1 w-full'>
+                    <h1 className='bg-indigo-600 text-white px-4 py-2 text-xl md:text-2xl rounded-md w-full'>
                       You're almost done! Please complete the payment by
-                      clicking here
+                      clicking here.
                     </h1>
                   </Link>
                 )}
               </div>
 
               <div className='items-end md:flex gap-x-16 space-y-2.5 font-serif sm:px-4 py-5 rounded mb-2'>
-                <div className='border-b md:border-b-0 pb-0.5 md:border-r border-gray-400 border-dashed pr-2'>
+                <div className='border-b md:border-b-0 pb-0.5 md:border-r border-gray-300 border-dashed pr-2'>
                   <p>Date:</p>
                   <p className=' font-semibold'>
                     {formatDate(order.created_at)}
                   </p>
                 </div>
-                <div className='border-b md:border-b-0 pb-0.5 md:border-r border-gray-400 border-dashed pr-2'>
+                <div className='border-b md:border-b-0 pb-0.5 md:border-r border-gray-300 border-dashed pr-2'>
                   <p>Total:</p>
                   <p className=' font-semibold'>${order.total_price}</p>
                 </div>
-                <div className='border-b md:border-b-0 border-gray-400 border-dashed'>
+                <div className='border-b md:border-b-0 border-gray-300 border-dashed'>
                   <p>Payment method:</p>
                   <p className=' font-semibold'>{order.payment_method}</p>
                 </div>
@@ -98,13 +99,13 @@ const Order = () => {
                 {order.items.map((item) => (
                   <div
                     key={item.id}
-                    className='flex items-center justify-between px-3 border-t border-dashed border-gray-300 pt-2'>
+                    className='flex items-center justify-between pl-4 pr-20 md:pr-32 border-t border-dashed border-gray-300 pt-2'>
                     <img
                       className='h-32 w-32 object-contain'
                       src={item.product?.image}
                       alt=''
                     />
-                    <p className=''>
+                    <p className='text-lg font-bold'>
                       {item.product?.title}
                       <span className='px-3'>x</span>
                       {item.quantity}

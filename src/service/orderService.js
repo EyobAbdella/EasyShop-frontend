@@ -6,11 +6,15 @@ export const getOrder = (authTokens, orderId) => {
   return useQuery({
     queryKey: ["order", orderId],
     queryFn: async () => {
-      const response = await axios.get(`${API_URL}/store/orders/`, {
-        headers: {
-          Authorization: `JWT ${authTokens.access}`,
-        },
-      });
+      const response = await axios.get(
+        `${API_URL}/store/orders/${orderId ? orderId : ""}`,
+        {
+          headers: {
+            Authorization: `JWT ${authTokens.access}`,
+          },
+        }
+      );
+      if (orderId) return [response.data];
       return response.data;
     },
     refetchOnWindowFocus: false,

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
+import { AiOutlineGlobal } from "react-icons/ai";
 import { FaSquareGithub, FaSquareXTwitter } from "react-icons/fa6";
 import { ImLinkedin } from "react-icons/im";
 const Footer = () => {
@@ -42,6 +43,12 @@ const Footer = () => {
           <div>
             <h4 className='text-xl font-bold mb-4'>Contact Information</h4>
             <ul className='text-gray-400 space-y-1'>
+              <Link
+                to='https://eyob-tech.com'
+                className='cursor-pointer hover:underline flex gap-x-2'>
+                <AiOutlineGlobal size={26} />
+                <span className='break-words'>eyob-tech.com</span>
+              </Link>
               <li className='flex gap-x-2'>
                 <MdEmail size={26} />
                 <span className='break-words'>eyobabdellasharo@gmail.com</span>
