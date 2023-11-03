@@ -14,6 +14,12 @@ const Order = () => {
   const { id } = useParams();
   const { data, isLoading } = getOrder(authTokens, id);
 
+  function truncateTitle(title) {
+    if (title.length > 35) {
+      return title.slice(0, 35) + " ...";
+    }
+    return title;
+  }
   useEffect(() => {
     const values = QueryString.parse(location.search);
 
@@ -99,17 +105,19 @@ const Order = () => {
                 {order.items.map((item) => (
                   <div
                     key={item.id}
-                    className='flex items-center justify-between pl-4 pr-20 md:pr-32 border-t border-dashed border-gray-300 pt-2'>
+                    className='flex items-center justify-evenly gap-x-4  border-t border-dashed border-gray-300 pt-2'>
                     <img
                       className='h-32 w-32 object-contain'
                       src={item.product?.image}
                       alt=''
                     />
-                    <p className='text-lg font-bold'>
-                      {item.product?.title}
-                      <span className='px-3'>x</span>
-                      {item.quantity}
-                    </p>
+                    <div className='text-lg flex items-center font-semibold'>
+                      <p>{truncateTitle(item.product?.title)}</p>
+                      <p className='font-bold text-lg'>
+                        <span className='px-3'>x</span>
+                        {item.quantity}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

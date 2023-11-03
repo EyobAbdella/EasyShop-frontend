@@ -12,7 +12,8 @@ import CartItemSkeleton, {
 } from "../skeletons/CartItemSkeleton";
 
 const Cart = () => {
-  const { cartItems, isLoading, cartId, setOrder } = useContext(StoreContext);
+  const { cartItems, isLoading, cartId, setOrder, totalPrice } =
+    useContext(StoreContext);
   const { authTokens } = useContext(AuthContext);
   const totalItems = cartItems?.length;
   const navigate = useNavigate();
@@ -95,14 +96,14 @@ const Cart = () => {
             <Shipping address={address} setAddress={setAddress} />
             <div className='mb-auto w-full md:max-w-[600px] mx-auto'>
               <h1 className='text-lg pl-2'>Cart Totals</h1>
-              <div className='md:shadow-xl shadow-slate-300 p-3'>
+              <div className='p-3'>
                 <section className='flex justify-between items-center border-b border-gray-200 mt-5'>
                   <p>Delivery</p>
                   <p>Free</p>
                 </section>
                 <section className='flex justify-between items-center border-b border-gray-200 mt-5'>
                   <p>Total</p>
-                  <p>$100.00</p>
+                  <p>${totalPrice}</p>
                 </section>
                 <button
                   onClick={handleCheckout}

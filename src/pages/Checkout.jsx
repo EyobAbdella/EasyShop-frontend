@@ -6,9 +6,13 @@ import toast from "react-hot-toast";
 import OrderSummary from "../components/OrderSummary";
 import OrderInfo from "../components/OrderInfo";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { API_URL } from "../config";
+import { AuthContext } from "../context/AuthContext";
 
 const Checkout = () => {
   const { order } = useContext(StoreContext);
+  const { authTokens } = useContext(AuthContext);
   const orderId = order?.id;
   const products = order?.items;
   const totalPrice = order?.total_price;
@@ -33,7 +37,7 @@ const Checkout = () => {
         <div className='grid grid-cols-1 custom:grid-cols-2 place-items-center gap-y-2'>
           <div className='w-full max-w-[600px] mb-auto row-start-2 custom:row-start-1'>
             <OrderInfo />
-            <div className='sm:shadow-sm sm:shadow-slate-200 py-4 px-3 w-full max-w-[600px]'>
+            <div className='py-4 px-3 w-full max-w-[600px]'>
               <h1 className='text-xl font-medium mb-3 text-center'>Payment</h1>
               <div className='w-full sm:w-72 mx-auto'>
                 <PayPalButtons
@@ -51,11 +55,21 @@ const Checkout = () => {
                     });
                   }}
                   onApprove={(data, actions) => {
+                    axios.post(
+                      `${API_URL}/paypal-payment-approved/${orderId}`,
+                      {},
+                      {
+                        headers: {
+                          Authorization: `JWT ${authTokens.access}`,
+                        },
+                      }
+                    );
                     return actions.order.capture().then(function (details) {
                       toast.success(
                         "Payment completed. Thank you, " +
                           details.payer.name.given_name
                       );
+
                       window.location.href = `/order/${orderId}`;
                     });
                   }}

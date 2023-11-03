@@ -7,7 +7,7 @@ const Shipping = ({ address, setAddress }) => {
   return (
     <div className='w-full space-y-3 md:max-w-[600px] px-1.5'>
       <h1 className='text-xl font-medium mx-auto pl-2'>Shipping Information</h1>
-      <div className='sm:shadow-lg sm:shadow-slate-300 p-1.5 sm:p-4 space-y-4'>
+      <div className='p-1.5 sm:p-4 space-y-4'>
         <div>
           <label className='text-sm' htmlFor='streetAddress'>
             Street address
