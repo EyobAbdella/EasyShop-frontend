@@ -2,14 +2,13 @@ import { useQuery } from "react-query";
 import ProductCard from "../components/ProductCard";
 import axios from "axios";
 import { API_URL } from "../config";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import ProductSkeleton from "../skeletons/ProductSkeleton";
-import { StoreContext } from "../context/StoreContext";
 import useDebounce from "../hooks/useDebounce";
 
 const Products = ({ category }) => {
@@ -17,7 +16,7 @@ const Products = ({ category }) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("q");
-  const debouncedSearch = useDebounce(searchQuery || "", 500);
+  const debouncedSearch = useDebounce(searchQuery || "", 300);
 
   useEffect(() => {
     setPage(1);

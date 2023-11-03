@@ -23,32 +23,32 @@ const Navbar = () => {
         <ul className='flex gap-x-5 xl:gap-x-8 cursor-pointer'>
           <Link
             to='/Shop'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             Shop All
           </Link>
           <Link
             to='/Electronics'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             Electronics
           </Link>
           <Link
             to='Books'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             Books
           </Link>
           <Link
             to='Groceries'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             Groceries
           </Link>
           <Link
             to='clothes'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             clothes
           </Link>
           <Link
             to='Beauty'
-            className='hover:text-slate-950 font-serif font-semibold duration-500'>
+            className='hover:text-slate-400 font-serif font-semibold duration-500'>
             Beauty
           </Link>
         </ul>
