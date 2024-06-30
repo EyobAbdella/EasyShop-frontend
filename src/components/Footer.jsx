@@ -44,18 +44,18 @@ const Footer = () => {
             <h4 className='text-xl font-bold mb-4'>Contact Information</h4>
             <ul className='text-gray-400 space-y-1'>
               <Link
-                to='https://eyob-tech.com'
+                to='https://eyob-tech.vercel.app/'
                 className='cursor-pointer hover:underline flex gap-x-2'>
                 <AiOutlineGlobal size={26} />
-                <span className='break-words'>eyob-tech.com</span>
+                <span className='break-words'>eyob-tech.vercel.app</span>
               </Link>
               <li className='flex gap-x-2'>
                 <MdEmail size={26} />
                 <span className='break-words'>eyobabdellasharo@gmail.com</span>
               </li>
-              <li className='flex gap-x-2'>
-                <FaSquareXTwitter size={25} /> <span>@EyobAbdella1</span>
-              </li>
+              <Link to="https://x.com/DevWithNikola" className='flex gap-x-2'>
+                <FaSquareXTwitter size={25} /> <span>Twitter</span>
+              </Link>
               <Link
                 className=' cursor-pointer hover:underline flex gap-x-2 pl-0.5'
                 to='https://www.linkedin.com/in/eyob-abdella-532554262/'>
